@@ -1,0 +1,26 @@
+import streamlit as st
+
+def run_medium(quote, author, first_name, last_name):
+    if "medium_attempts" not in st.session_state:
+        st.session_state.medium_attempts = 0
+
+    guess = st.text_input("Enter the guessed author's name", key="medium_guess")
+    if st.button("Submit"):
+        if st.session_state.answered:
+            st.warning("Click 'Next Quote' to continue.")
+        else:
+            st.session_state.medium_attempts += 1
+            if first_name in guess.lower() or last_name in guess.lower():
+                st.success("✅ Correct! You got part of the author's name.")
+                st.session_state.medium_score += 1
+                st.session_state.medium_games += 1
+                st.session_state.answered = True
+            elif st.session_state.medium_attempts == 1:
+                st.warning("❌ Incorrect. You have one more try.")
+            elif st.session_state.medium_attempts == 2:
+                st.error(f"❌ Final attempt. The author's last name starts with: **{quote['author'].split(' ')[-1][0]}**")
+            else:
+                st.error(f"❌ Out of attempts. The correct author was: **{author}**")
+                st.session_state.answered = True
+                st.session_state.medium_games += 1
+                st.session_state.medium_attempts = 0
