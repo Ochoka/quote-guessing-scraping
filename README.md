@@ -6,9 +6,9 @@ An interactive Streamlit web app where users guess the author of a famous quote.
 
 ## 🔧 Features
 
-- Scrapes quotes, author bios, birth info, and tags
-- Loads 50 quotes at a time to minimise scraping load
-- Automatically refreshes to the next 50 after 50 rounds
+- Scrapes quotes, author bios, birth info, and tags.
+- Loads 50 quotes at a time to minimise scraping load.
+- Automatically refreshes to the next 50 after 50 rounds.
 - Three difficulty levels:
   - **Easy**: Author bio shown (name redacted); accepts first or last name
   - **Medium**: Two guesses; second try reveals the full last name
@@ -30,7 +30,7 @@ Quote-Guessing/
 ├── easy.py                # Easy mode logic
 ├── medium.py              # Medium mode logic
 ├── hard.py                # Hard mode logic
-├── quotes\_cache.json      # Cached quote data (auto-generated)
+├── quotes_cache.json      # Cached quote data (auto-generated)
 ├── requirements.txt       # Dependencies
 └── README.md              # Project documentation
 
@@ -70,9 +70,4 @@ streamlit run app.py
 
 This project is adapted from a public tutorial on [GeeksforGeeks](https://www.geeksforgeeks.org/python/quote-guessing-game-using-web-scraping-in-python/) and expanded with additional logic, user interface, and features using Streamlit.
 
----
-
-## Credits
-
-* Base scraping idea: [GeeksforGeeks Tutorial](https://www.geeksforgeeks.org/python/quote-guessing-game-using-web-scraping-in-python/)
-* Quotes sourced from [quotes.toscrape.com](http://quotes.toscrape.com)
+Quotes sourced from [quotes.toscrape.com](http://quotes.toscrape.com)
